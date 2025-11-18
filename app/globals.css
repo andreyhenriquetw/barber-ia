@@ -189,4 +189,85 @@
   body {
     @apply bg-background text-foreground;
   }
+  /* Impede que o scroll apareça quando o botão entra da direita */
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Animação de entrada vindo da direita */
+  @keyframes buttonEnter {
+    0% {
+      transform: translateX(120%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  /* Animação de pulo contínuo */
+  @keyframes buttonBounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  /* Classe combinando entrada + pulo */
+  .btn-entrando {
+    opacity: 0;
+    animation:
+      buttonEnter 1.4s ease-out 2s forwards,
+      /* entra depois de 3s */ buttonBounce 1.8s ease-in-out 4.4s infinite; /* pulo começa depois */
+  }
+
+  @keyframes text-enter {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .text-entrando {
+    opacity: 0;
+    animation: buttonEnter 1.4s ease-out 2s forwards;
+  }
+
+  .shine-button {
+    position: relative;
+  }
+
+  .shine-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 100%
+    );
+    transform: skewX(-20deg);
+    animation: shineMove 5s infinite ease-in-out;
+  }
+
+  @keyframes shineMove {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 120%;
+    }
+  }
 }
