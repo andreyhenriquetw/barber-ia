@@ -1,4 +1,6 @@
 import Header from "./_components/header";
+import Image from "next/image";
+import banner from "@/public/banner011.png";
 
 import BookingItem from "./_components/booking-item";
 
@@ -13,16 +15,12 @@ const Home = () => {
         <div className="rounde relative w-full">
           {/* VIDEO */}
           <div className="h-[540px] w-full overflow-hidden shadow-lg ring-1 ring-black/10">
-            <video
-              src="/videosilas1.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              poster="/thumb-do-video.jpg"
-              className="w-full object-cover object-top"
-            ></video>
+            <Image
+              src={banner}
+              alt="Agende agora!"
+              sizes="100vw"
+              className="h-auto w-full"
+            />
           </div>
 
           {/* TEXTO ANIMADO */}
