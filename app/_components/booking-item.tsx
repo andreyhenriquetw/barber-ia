@@ -32,6 +32,19 @@ const BookingItem = ({
           </div>
         </div>
       </div>
+
+      <div className="flex h-full flex-col items-center justify-center border-l p-4 py-3">
+        <p className="text-xs capitalize">
+          {date.toLocaleDateString("pt-BR", { month: "long" })}
+        </p>
+        <p>{date.toLocaleDateString("pt-BR", { day: "2-digit" })}</p>
+        <p className="text-xs capitalize">
+          {date.toLocaleTimeString("pt-BR", {
+            hour: "2-digit",
+            minute: "2-digit",
+          })}
+        </p>
+      </div>
     </Card>
   );
 };
