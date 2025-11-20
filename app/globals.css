@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(39.759% 0.06316 241.69);
-  --foreground: oklch(0.2178 0 0);
+  --background: #000000;
+  --foreground: oklch(0% 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.2178 0 0);
   --popover: oklch(1 0 0);
@@ -65,61 +65,47 @@
 }
 
 .dark {
-  --background: oklch(0.2178 0 0);
-  --foreground: oklch(0.994 0 0);
-  --card: oklch(0.2686 0 0);
-  --card-foreground: oklch(0.994 0 0);
-  --popover: oklch(0.2686 0 0);
-  --popover-foreground: oklch(0.994 0 0);
-  --primary: oklch(0.433 0.0745 149.7347);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.3211 0 0);
-  --secondary-foreground: oklch(0.994 0 0);
-  --muted: oklch(0.2891 0 0);
-  --muted-foreground: oklch(0.7155 0 0);
-  --accent: oklch(0.3338 0.0309 150.119);
-  --accent-foreground: oklch(0.994 0 0);
-  --destructive: oklch(0.6591 0.153 22.1703);
-  --destructive-foreground: oklch(0.2178 0 0);
-  --border: oklch(0.3979 0 0);
-  --input: oklch(0.2686 0 0);
-  --ring: oklch(0.433 0.0745 149.7347);
-  --chart-1: oklch(0.433 0.0745 149.7347);
-  --chart-2: oklch(0.6402 0.069 155.0903);
-  --chart-3: oklch(0.7641 0.0506 150.5513);
-  --chart-4: oklch(0.8883 0.0287 151.8825);
-  --chart-5: oklch(0.9712 0.0075 151.8901);
-  --sidebar: oklch(0.2478 0 0);
-  --sidebar-foreground: oklch(0.994 0 0);
-  --sidebar-primary: oklch(0.433 0.0745 149.7347);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.3338 0.0309 150.119);
-  --sidebar-accent-foreground: oklch(0.994 0 0);
-  --sidebar-border: oklch(0.3485 0 0);
-  --sidebar-ring: oklch(0.433 0.0745 149.7347);
-  --font-sans: Inter, sans-serif;
-  --font-serif: Georgia, serif;
-  --font-mono: JetBrains Mono, monospace;
+  --background: 225 9% 9%;
+  --foreground: 210 40% 98%;
+
+  --card: 228 9% 11%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 228 9% 11%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 252 100% 69%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 228 6% 16%;
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 228 6% 16%;
+  --muted-foreground: 215 20.2% 65.1%;
+
+  --accent: 228 6% 16%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 228 6% 16%;
+  --input: 228 6% 16%;
+  --ring: 212.7 26.8% 83.9%;
+
   --radius: 0.5rem;
-  --shadow-x: 0;
-  --shadow-y: 0.25rem;
-  --shadow-blur: 0.5rem;
-  --shadow-spread: 0;
-  --shadow-opacity: 0.4;
-  --shadow-color: 0 0 0;
-  --shadow-2xs: 0 0.25rem 0.5rem 0 hsl(0 0 0 / 0.2);
-  --shadow-xs: 0 0.25rem 0.5rem 0 hsl(0 0 0 / 0.2);
-  --shadow-sm:
-    0 0.25rem 0.5rem 0 hsl(0 0 0 / 0.4), 0 1px 2px -1px hsl(0 0 0 / 0.4);
-  --shadow:
-    0 0.25rem 0.5rem 0 hsl(0 0 0 / 0.4), 0 1px 2px -1px hsl(0 0 0 / 0.4);
-  --shadow-md:
-    0 0.25rem 0.5rem 0 hsl(0 0 0 / 0.4), 0 2px 4px -1px hsl(0 0 0 / 0.4);
-  --shadow-lg:
-    0 0.25rem 0.5rem 0 hsl(0 0 0 / 0.4), 0 4px 6px -1px hsl(0 0 0 / 0.4);
-  --shadow-xl:
-    0 0.25rem 0.5rem 0 hsl(0 0 0 / 0.4), 0 8px 10px -1px hsl(0 0 0 / 0.4);
-  --shadow-2xl: 0 0.25rem 0.5rem 0 hsl(0 0 0 / 1);
+}
+
+@layer base {
+  * {
+    @apply border-border antialiased;
+  }
+  html {
+    @apply h-full;
+  }
+  body {
+    @apply bg-background text-foreground h-full;
+  }
 }
 
 @theme inline {
@@ -182,92 +168,84 @@
   --tracking-widest: calc(var(--tracking-normal) + 0.1em);
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-  /* Impede que o scroll apareça quando o botão entra da direita */
-  html,
-  body {
-    overflow-x: hidden;
-  }
+/* Impede que o scroll apareça quando o botão entra da direita */
+html,
+body {
+  overflow-x: hidden;
+}
 
-  /* Animação de entrada vindo da direita */
-  @keyframes buttonEnter {
-    0% {
-      transform: translateX(120%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
-  /* Animação de pulo contínuo */
-  @keyframes buttonBounce {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-8px);
-    }
-  }
-
-  /* Classe combinando entrada + pulo */
-  .btn-entrando {
+/* Animação de entrada vindo da direita */
+@keyframes buttonEnter {
+  0% {
+    transform: translateX(120%);
     opacity: 0;
-    animation:
-      buttonEnter 1.4s ease-out 2s forwards,
-      /* entra depois de 3s */ buttonBounce 1.8s ease-in-out 4.4s infinite; /* pulo começa depois */
   }
-
-  @keyframes text-enter {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-8px);
-    }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
+}
 
-  .text-entrando {
-    opacity: 0;
-    animation: buttonEnter 1.4s ease-out 2s forwards;
+/* Animação de pulo contínuo */
+@keyframes buttonBounce {
+  0%,
+  100% {
+    transform: translateY(0);
   }
-
-  .shine-button {
-    position: relative;
+  50% {
+    transform: translateY(-8px);
   }
+}
 
-  .shine-button::after {
-    content: "";
-    position: absolute;
-    top: 0;
+/* Classe combinando entrada + pulo */
+.btn-entrando {
+  opacity: 0;
+  animation:
+    buttonEnter 1.4s ease-out 2s forwards,
+    /* entra depois de 3s */ buttonBounce 1.8s ease-in-out 4.4s infinite; /* pulo começa depois */
+}
+
+@keyframes text-enter {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.text-entrando {
+  opacity: 0;
+  animation: buttonEnter 1.4s ease-out 2s forwards;
+}
+
+.shine-button {
+  position: relative;
+}
+
+.shine-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  animation: shineMove 5s infinite ease-in-out;
+}
+
+@keyframes shineMove {
+  0% {
     left: -100%;
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(
-      120deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.4) 50%,
-      transparent 100%
-    );
-    transform: skewX(-20deg);
-    animation: shineMove 5s infinite ease-in-out;
   }
-
-  @keyframes shineMove {
-    0% {
-      left: -100%;
-    }
-    100% {
-      left: 120%;
-    }
+  100% {
+    left: 120%;
   }
 }

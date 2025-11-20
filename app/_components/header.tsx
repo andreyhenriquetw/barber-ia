@@ -6,14 +6,14 @@ import { MenuIcon } from "lucide-react";
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between bg-[#294B63] px-5 py-5">
+    <header className="flex items-center justify-between bg-[#000000] px-6 py-5">
       <Image
-        src="/LOGO-SILAS-NOVA.png"
+        src="/id-232-logo.jpg"
         alt="lOGO SILAS"
         width={75}
         height={26.09}
       />
-      <Button className="border-none bg-transparent text-white hover:bg-transparent">
+      <Button className="border-none bg-transparent text-amber-400 hover:bg-transparent">
         <MenuIcon className="size-6" strokeWidth={3} />
       </Button>
     </header>

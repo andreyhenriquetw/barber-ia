@@ -17,27 +17,47 @@ const BookingItem = ({
   date,
 }: BookingItemProps) => {
   return (
-    <Card className="justify-betify-between flex w-full min-w-full flex-row items-center p-0">
+    <Card
+      className="flex w-full min-w-full flex-row items-center justify-between p-0"
+      style={{
+        backgroundColor: "#1A1A1A", // cinza premium
+        border: "1px solid #333", // borda cinza leve moderna
+      }}
+    >
       {/* ESQUERDA */}
       <div className="flex flex-1 flex-col gap-4 p-4">
         <Badge>Confirmado</Badge>
 
         <div className="flex flex-col gap-2">
-          <p className="font-bold">{serviceName}</p>
+          {/* NOME DO SERVIÇO (DOURADO) */}
+          <p className="font-bold" style={{ color: "#FFFFFF" }}>
+            {serviceName}
+          </p>
+
           <div className="flex items-center gap-2">
             <Avatar className="h-6 w-6">
               <AvatarImage src={barbershopImageUrl} />
             </Avatar>
-            <p className="text-muted-foreground text-sm">{barbershopName}</p>
+
+            {/* NOME DA BARBEARIA (DOURADO) */}
+            <p className="text-sm" style={{ color: "#C0C0C0" }}>
+              {barbershopName}
+            </p>
           </div>
         </div>
       </div>
 
-      <div className="flex h-full flex-col items-center justify-center border-l p-4 py-3">
+      {/* DIREITA - DATA (TUDO DOURADO) */}
+      <div
+        className="flex h-full flex-col items-center justify-center border-l p-4 py-3"
+        style={{ color: "#FFD700" }}
+      >
         <p className="text-xs capitalize">
           {date.toLocaleDateString("pt-BR", { month: "long" })}
         </p>
+
         <p>{date.toLocaleDateString("pt-BR", { day: "2-digit" })}</p>
+
         <p className="text-xs capitalize">
           {date.toLocaleTimeString("pt-BR", {
             hour: "2-digit",
