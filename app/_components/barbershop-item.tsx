@@ -24,16 +24,16 @@ const BarbershopItem = ({ barbershop }: BarbershopItemProps) => {
       >
         {/* TÍTULO */}
         <h2
-          className="mb-9 text-center text-2xl font-extrabold tracking-wide md:text-4xl"
+          className="mb-9 text-center text-xl font-extrabold tracking-wide md:text-3xl"
           style={{ fontFamily: '"Cinzel", serif' }}
         >
           QUAL SERÁ O PEDIDO PARA HOJE?
         </h2>
 
         {/* LISTA DE PREÇOS */}
-        <div className="grid w-full max-w-4xl grid-cols-1 gap-4 text-lg font-semibold md:grid-cols-2">
+        <div className="grid w-full max-w-4xl grid-cols-1 gap-4 font-semibold md:grid-cols-2">
           {/* COLUNA ESQUERDA */}
-          <div className="space-y-8">
+          <div className="space-y-7">
             <div className="flex items-center justify-between border-b border-white/40 pb-2">
               <span>CORTE</span>
               <span>R$ 45,00</span>
@@ -48,10 +48,7 @@ const BarbershopItem = ({ barbershop }: BarbershopItemProps) => {
               <span>SOBRANCELHA</span>
               <span>R$ 15,00</span>
             </div>
-          </div>
 
-          {/* COLUNA DIREITA */}
-          <div className="space-y-8">
             <div className="flex items-center justify-between border-b border-white/40 pb-2">
               <span>PIGMENTAÇÃO</span>
               <span>R$ 40,00</span>

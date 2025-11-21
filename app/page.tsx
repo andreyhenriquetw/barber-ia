@@ -5,6 +5,14 @@ import banner from "@/public/logolpofc.jpg";
 import BookingItem from "./_components/booking-item";
 import { prisma } from "@/lib/prisma";
 import BarbershopItem from "./_components/barbershop-item";
+import Footer from "./_components/footer";
+import {
+  PageBotaoAgendar,
+  PageBotaoAgendarHorarioAgora,
+  PageContainer,
+  PageImageBanner,
+  PageSectionTitle,
+} from "./_components/ui/page";
 
 const Home = async () => {
   const barbershops = await prisma.barbershop.findMany();
@@ -15,46 +23,26 @@ const Home = async () => {
         <Header />
 
         {/* CONTAINER RELATIVO */}
-        <div className="rounde relative w-full">
-          {/* VIDEO */}
-          <div className="h-[500px] w-full overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/10">
+        <PageContainer>
+          {/* IMAGE BANNER*/}
+          <PageImageBanner>
             <Image
               src={banner}
               alt="Agende agora!"
               sizes="100vw"
               className="h-auto w-full"
             />
-          </div>
+          </PageImageBanner>
 
           {/* BOTÃO DE AGENDAR */}
-          <button
-            className="btn-entrando shine-button"
-            style={{
-              position: "absolute",
-              right: "14px",
-              bottom: "33px",
-              padding: "12px 20px",
-              borderRadius: "12px",
-              color: "#FFD700", // cor do texto dourado
-              fontSize: "14px",
-              fontWeight: 600,
-              boxShadow: "0px 4px 10px rgba(0,0,0,0.25)",
-              border: "1.5px solid #FFD700", // borda moderna dourada
-              cursor: "pointer",
-              transition: "all 0.2s ease",
-              background: "#000000", // fundo preto moderno
-              overflow: "hidden",
-            }}
-          >
-            AGENDAR AGORA
-          </button>
-        </div>
+          <PageBotaoAgendar>AGENDAR AGORA</PageBotaoAgendar>
+        </PageContainer>
 
-        <div className="mt-5 px-5">
+        <div className="mt-6 px-5">
           {/* AGENDAMENTO */}
-          <h2 className="mb-3 text-xs font-semibold text-white uppercase">
-            Agendamentos
-          </h2>
+          <PageSectionTitle>Agendamentos</PageSectionTitle>
+
+          {/* Booking Agendamento */}
           <BookingItem
             serviceName="Corte de cabelo"
             barbershopName="LP Barbearia"
@@ -64,7 +52,7 @@ const Home = async () => {
           />
 
           {/* SEÇÃO DE SERVIÇOS */}
-          <div className="relative right-1/2 left-1/2 mt-5 -mr-[50vw] -ml-[50vw] w-screen bg-[#000000] px-6 py-6 text-center shadow-sm md:px-10">
+          <div className="relative right-1/2 left-1/2 mt-5 -mr-[50vw] -ml-[50vw] w-screen bg-[#000000] px-6 py-4 text-center shadow-sm md:px-10">
             <h2 className="mb-4 text-4xl font-bold text-[#FFD700]">Serviços</h2>
 
             <p className="mx-auto max-w-2xl text-base leading-relaxed text-white md:text-lg">
@@ -77,30 +65,17 @@ const Home = async () => {
               <BarbershopItem key={barbershop.id} barbershop={barbershop} />
             ))}
 
-            {/* BOTÃO CENTRALIZADO */}
+            {/* DIV DO BOTAO */}
             <div className="mt-6 flex justify-center">
-              <button
-                className="btn-entrando shine-button"
-                style={{
-                  padding: "12px 20px",
-                  borderRadius: "12px",
-                  color: "#FFD700",
-                  fontSize: "14px",
-                  fontWeight: 600,
-                  boxShadow: "0px 4px 10px rgba(0,0,0,0.25)",
-                  border: "1.5px solid #FFD700",
-                  cursor: "pointer",
-                  transition: "all 0.2s ease",
-                  background: "#000000",
-                  overflow: "hidden",
-                }}
-              >
+              {/* BOTÃO AGENDAR MEU HORARIO AGORA */}
+              <PageBotaoAgendarHorarioAgora>
                 AGENDAR MEU HORÁRIO AGORA
-              </button>
+              </PageBotaoAgendarHorarioAgora>
             </div>
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 };
