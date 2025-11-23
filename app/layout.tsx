@@ -6,6 +6,8 @@ import {
   Plus_Jakarta_Sans,
 } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "sonner";
+import Footer from "./_components/footer";
 
 const merriweather = Merriweather({
   variable: "--font-merriweather",
@@ -46,6 +48,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${merriweather.variable} ${plusJakarta.variable} antialiased`}
       >
         {children}
+        <Toaster />
+        <Footer />
       </body>
     </html>
   );

@@ -201,8 +201,8 @@ body {
 .btn-entrando {
   opacity: 0;
   animation:
-    buttonEnter 1.4s ease-out 2s forwards,
-    /* entra depois de 3s */ buttonBounce 1.8s ease-in-out 4.4s infinite; /* pulo começa depois */
+    buttonEnter 1.4s ease-out 1s forwards,
+    /* entra depois de 3s */ buttonBounce 1.8s ease-in-out 2.7s infinite; /* pulo começa depois */
 }
 
 @keyframes text-enter {

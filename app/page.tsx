@@ -5,7 +5,7 @@ import banner from "@/public/logolpofc.jpg";
 import BookingItem from "./_components/booking-item";
 import { prisma } from "@/lib/prisma";
 import BarbershopItem from "./_components/barbershop-item";
-import Footer from "./_components/footer";
+
 import {
   PageBotaoAgendar,
   PageBotaoAgendarHorarioAgora,
@@ -87,7 +87,6 @@ const Home = async () => {
           </div>
         </div>
       </div>
-      <Footer />
     </main>
   );
 };
