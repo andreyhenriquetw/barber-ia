@@ -26,7 +26,7 @@ const BookingItem = ({
     >
       {/* ESQUERDA */}
       <div className="flex flex-1 flex-col gap-4 p-4">
-        <Badge>Confirmado</Badge>
+        <Badge className="font-plus-jakarta">Confirmado</Badge>
 
         <div className="flex flex-col gap-2">
           {/* NOME DO SERVIÇO (DOURADO) */}
