@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Merriweather } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Merriweather,
+  Plus_Jakarta_Sans,
+} from "next/font/google";
 import "./globals.css";
 
 const merriweather = Merriweather({
@@ -12,6 +17,11 @@ const merriweather = Merriweather({
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta",
 });
 
 const geistMono = Geist_Mono({
@@ -33,7 +43,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} ${merriweather.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${merriweather.variable} ${plusJakarta.variable} antialiased`}
       >
         {children}
       </body>

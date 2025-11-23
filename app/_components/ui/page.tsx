@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Button } from "./button";
+import Link from "next/link";
 
 export const PageContainer = ({ children }: { children: React.ReactNode }) => {
   return <div className="relative w-full">{children}</div>;
@@ -34,33 +35,38 @@ export const PageImageBanner = ({
 };
 
 // BOTAO DE AGENDAR
+
 export const PageBotaoAgendar = ({
   children,
+  href,
 }: {
   children: React.ReactNode;
+  href: string;
 }) => {
   return (
-    <Button
-      className="btn-entrando shine-button"
-      style={{
-        position: "absolute",
-        right: "14px",
-        bottom: "33px",
-        padding: "12px 20px",
-        borderRadius: "12px",
-        color: "#FFD700", // cor do texto dourado
-        fontSize: "14px",
-        fontWeight: 600,
-        boxShadow: "0px 4px 10px rgba(0,0,0,0.25)",
-        border: "1.5px solid #FFD700", // borda moderna dourada
-        cursor: "pointer",
-        transition: "all 0.2s ease",
-        background: "#000000", // fundo preto moderno
-        overflow: "hidden",
-      }}
-    >
-      {children}
-    </Button>
+    <Link href={href}>
+      <Button
+        className="btn-entrando shine-button"
+        style={{
+          position: "absolute",
+          right: "14px",
+          bottom: "33px",
+          padding: "12px 20px",
+          borderRadius: "12px",
+          color: "#FFD700",
+          fontSize: "14px",
+          fontWeight: 600,
+          boxShadow: "0px 4px 10px rgba(0,0,0,0.25)",
+          border: "1.5px solid #FFD700",
+          cursor: "pointer",
+          transition: "all 0.2s ease",
+          background: "#000000",
+          overflow: "hidden",
+        }}
+      >
+        {children}
+      </Button>
+    </Link>
   );
 };
 
@@ -70,27 +76,31 @@ export const PageBotaoAgendar = ({
 
 export const PageBotaoAgendarHorarioAgora = ({
   children,
+  href,
 }: {
+  href: string;
   children: React.ReactNode;
 }) => {
   return (
-    <Button
-      className="btn-entrando shine-button"
-      style={{
-        padding: "12px 20px",
-        borderRadius: "12px",
-        color: "#FFD700",
-        fontSize: "14px",
-        fontWeight: 600,
-        boxShadow: "0px 4px 10px rgba(0,0,0,0.25)",
-        border: "1.5px solid #FFD700",
-        cursor: "pointer",
-        transition: "all 0.2s ease",
-        background: "#000000",
-        overflow: "hidden",
-      }}
-    >
-      {children}
-    </Button>
+    <Link href={href}>
+      <Button
+        className="btn-entrando shine-button"
+        style={{
+          padding: "12px 20px",
+          borderRadius: "12px",
+          color: "#FFD700",
+          fontSize: "14px",
+          fontWeight: 600,
+          boxShadow: "0px 4px 10px rgba(0,0,0,0.25)",
+          border: "1.5px solid #FFD700",
+          cursor: "pointer",
+          transition: "all 0.2s ease",
+          background: "#000000",
+          overflow: "hidden",
+        }}
+      >
+        {children}
+      </Button>
+    </Link>
   );
 };

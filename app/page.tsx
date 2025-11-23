@@ -21,7 +21,6 @@ const Home = async () => {
       <div>
         {/* HEADER */}
         <Header />
-
         {/* CONTAINER RELATIVO */}
         <PageContainer>
           {/* IMAGE BANNER*/}
@@ -35,9 +34,16 @@ const Home = async () => {
           </PageImageBanner>
 
           {/* BOTÃO DE AGENDAR */}
-          <PageBotaoAgendar>AGENDAR AGORA</PageBotaoAgendar>
+          <PageBotaoAgendar
+            href={
+              barbershops[0]?.id
+                ? `/barbershops/${barbershops[0].id}`
+                : "/barbershops"
+            }
+          >
+            AGENDAR AGORA
+          </PageBotaoAgendar>
         </PageContainer>
-
         <div className="mt-6 px-5">
           {/* AGENDAMENTO */}
           <PageSectionTitle>Agendamentos</PageSectionTitle>
@@ -68,7 +74,13 @@ const Home = async () => {
             {/* DIV DO BOTAO */}
             <div className="mt-6 flex justify-center">
               {/* BOTÃO AGENDAR MEU HORARIO AGORA */}
-              <PageBotaoAgendarHorarioAgora>
+              <PageBotaoAgendarHorarioAgora
+                href={
+                  barbershops[0]?.id
+                    ? `/barbershops/${barbershops[0].id}`
+                    : "/barbershops"
+                }
+              >
                 AGENDAR MEU HORÁRIO AGORA
               </PageBotaoAgendarHorarioAgora>
             </div>

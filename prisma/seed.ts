@@ -8,7 +8,7 @@ async function seedDatabase() {
       "https://utfs.io/f/45331760-899c-4b4b-910e-e00babb6ed81-16q.png",
     ];
     // Nomes criativos para as barbearias
-    const creativeNames = ["Silas Barbearia"];
+    const creativeNames = ["LP Barbearia"];
 
     // Endereços fictícios para as barbearias
     const addresses = ["Avenida dos Cortes, 456"];
